@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<!--
+	Theory by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Train</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}" />
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a class="logo">A project by Kieran Schubert for Visium</a>
+					<nav id="nav">
+						<a href={{ url_for('train') }}>Train</a>
+						<a href={{ url_for('pred') }}>Predict</a>
+					</nav>
+					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+				</div>
+			</header>
+
+		<!-- Banner -->
+			<section id="banner">
+				<h1>Train</h1>
+				<p>You can train the final model here.</p>
+			</section>
+
+		<!-- One -->
+			<section id="one" class="wrapper">
+				<div class="inner">
+					<div class="flex flex-3">
+						<article>
+							<header>
+								<h3>How to train the model</h3>
+							</header>
+							<p>You can train the final model from scratch by selecting different hyperparameters and then clicking the <i>Train</i> button. The final model is a kNN model trained on augmented data.</p>
+							<h3>Hyperparameter selection</h3>
+							<h4>n_neighbors: int</h4>
+							<p>Number of neighbors to use.</p>
+							<h4>weights: str</h4>
+							<p>Weight function used in prediction:
+								<ul>
+									<li>‘uniform’</li>
+									<li>‘distance’</li>
+								</ul>
+							</p>
+							<h4>algorithm: str</h4>
+							<p> Algorithm used to compute the nearest neighbors:
+								<ul>
+									<li>‘ball_tree’</li>
+									<li>‘kd_tree’</li>
+									<li>‘brute’</li>
+									<li>‘auto’</li>
+								</ul>
+							</p>
+							<h4>leaf_size: int</h4>
+							<p>Leaf size passed to BallTree or KDTree.</p>
+							<h4>metric: str</h4>
+							<p>The distance metric to use for the tree.
+								<ul>
+									<li>‘euclidean’</li>
+									<li>‘manhattan’</li>
+									<li>‘minkowski’</li>
+									<li>‘chebyshev’</li>
+								</ul>
+							</p>
+							<h3>Extra documentation</h3>
+							<a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html">Scikit-learn docs</a>
+						</article>
+						<article>
+							<header>
+								<h3>Select Hyperparameters</h3>
+							</header>
+							<form method='POST', action="/train">
+							  <label>n_neighbors:</label>
+							  <input type="text" id="n_neighbors" name="n_neighbors" placeholder=3><br>
+							  <label>weights:</label>
+							  <input type="text" id="weights" name="weights" placeholder="distance"><br>
+							  <label>algorithm:</label>
+							  <input type="text" id="algorithm" name="algorithm" placeholder="auto"><br>
+							  <label>leaf_size:</label>
+							  <input type="text" id="leaf_size" name="leaf_size" placeholder=5><br>
+							  <label>metric:</label>
+							  <input type="text" id="metric" name="metric" placeholder="euclidean"><br>
+							  <p>Click <i>Train</i> to train the model.</p>
+							  <input class="button special" type="submit" value="Train"></a>
+							</form>
+							<footer>
+								
+								
+							</footer>
+						</article>
+						<article>
+							<header>
+								<h3>Model Diagnostics</h3>
+							</header>
+							<p>Training Accuracy is : {{ trn_score }} <br> 
+								Validation accuracy is : {{ val_score }} <br>
+								Test accuracy is : {{ test_score }}
+							</p>
+							<div>
+							  <h4>Classification Report (Test data)</h4>
+							    {{ class_report|safe }}
+							</div>
+							<h4>Confusion Matrix (Test data)</h4>
+							<p>
+								<img src="{{ image }}" height="300" width="350"></img>
+							</p>
+						</article>
+					</div>
+				</div>
+			</section>
+
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<div class="flex">
+						<div class="copyright">
+							&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.
+						</div>
+					</div>
+				</div>
+			</footer>
+
+	</body>
+</html>

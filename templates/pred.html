@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<!--
+	Theory by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Predict</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}" />
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a class="logo">A project by Kieran Schubert for Visium</a>
+					<nav id="nav">
+						<a href={{ url_for('train') }}>Train</a>
+						<a href={{ url_for('pred') }}>Predict</a>
+					</nav>
+					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+				</div>
+			</header>
+
+		<!-- Banner -->
+			<section id="banner">
+				<h1>Predict</h1>
+				<p>You can make predictions with the final model here.</p>
+			</section>
+
+		<!-- One -->
+			<section id="one" class="wrapper">
+				<div class="inner">
+					<div class="flex flex-3">
+						<article>
+							<header>
+								<h3>How to make a prediction</h3>
+							</header>
+							<p>Select a .wav file and click the <i>Predict</i> button.</p>
+						</article>
+						<article>
+							<header>
+								<h3>Select a .wav file</h3>
+							</header>
+							<form method="POST" action="/pred">
+							  <select id="wav" name="wav">
+							  {% for x in file_list %}
+							    <option value="{{ x }}">{{ x }}</option>
+							  {% endfor %}
+							  </select><br>
+							  <input class="button special" type="submit" value="Predict">
+							</form>
+						</article>
+						<article>
+							<header>
+								<h3>Results</h3>
+							</header>
+							<p>{{ result }}</p>
+							<p>{{ true_value }}</p>
+						</article>
+					</div>
+				</div>
+			</section>
+
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<div class="flex">
+						<div class="copyright">
+							&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.
+						</div>
+					</div>
+				</div>
+			</footer>
+
+	</body>
+</html>
