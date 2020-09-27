@@ -1,5 +1,5 @@
-# SER for Visium SA
-Speech Emotion Recognition recruitment test for Visium SA.
+# SER
+Speech Emotion Recognition on the Emo-DB dataset.
 
 ## Project Description
 Using audio speech data, build a model that can classify audio samples into different emotions and deploy it using Flask and Docker. For more details about the data, see the ipython notebook.
