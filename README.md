@@ -4,10 +4,17 @@ Speech Emotion Recognition on the Emo-DB dataset.
 ## Project Description
 Using audio speech data, build a model that can classify audio samples into different emotions and deploy it using Flask and Docker. For more details about the data, see the ipython notebook.
 
-<img src="https://github.com/K-Schubert/speech-emotion-recognition/blob/master/train_1.png" width="350" style="vertical-align:middle">
-<img src="https://github.com/K-Schubert/speech-emotion-recognition/blob/master/train_2.png" width="350" style="vertical-align:middle">
-<img src="https://github.com/K-Schubert/speech-emotion-recognition/blob/master/pred.png" width="350" style="vertical-align:middle">
-
+<div class="row">
+  <div class="column">
+    <img src="https://github.com/K-Schubert/speech-emotion-recognition/blob/master/train_1.png" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="https://github.com/K-Schubert/speech-emotion-recognition/blob/master/train_2.png" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="https://github.com/K-Schubert/speech-emotion-recognition/blob/master/pred.png" style="width:100%">
+  </div>
+</div>
 
 ## How-to-use
 The ```.zip``` file contains all the files to build a Flask app and containerize it with Docker. Below, you will find a description about the contents of each directory and instructions to build and run the Docker container.
