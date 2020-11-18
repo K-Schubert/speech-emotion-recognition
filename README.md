@@ -4,9 +4,9 @@ Speech Emotion Recognition on the Emo-DB dataset.
 ## Project Description
 Using audio speech data, build a model that can classify audio samples into different emotions and deploy it using Flask and Docker. For more details about the data, see the ipython notebook.
 
-<img src="https://github.com/K-Schubert/speech-emotion-recognition/blob/master/train_1.png" width="350">
-<img src="https://github.com/K-Schubert/speech-emotion-recognition/blob/master/train_2.png" width="350">
-<img src="https://github.com/K-Schubert/speech-emotion-recognition/blob/master/pred.png" width="350">
+<img src="https://github.com/K-Schubert/speech-emotion-recognition/blob/master/train_1.png" width="350" style="vertical-align:middle">
+<img src="https://github.com/K-Schubert/speech-emotion-recognition/blob/master/train_2.png" width="350" style="vertical-align:middle">
+<img src="https://github.com/K-Schubert/speech-emotion-recognition/blob/master/pred.png" width="350" style="vertical-align:middle">
 
 
 ## How-to-use
